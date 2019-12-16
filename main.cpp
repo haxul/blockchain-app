@@ -1,6 +1,7 @@
 #include <iostream>
-
+#include "./CipherTable/CipherTable.h"
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    CipherTable table;
+    table.to_string();
     return 0;
 }

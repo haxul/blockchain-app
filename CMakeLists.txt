@@ -3,4 +3,4 @@ project(blockchain_game)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(blockchain_game main.cpp)
+add_executable(blockchain_game main.cpp CipherTable/CipherTable.cpp CipherTable/CipherTable.h CipherTable/CipherAble.h)
