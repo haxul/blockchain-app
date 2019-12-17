@@ -1,9 +1,10 @@
 #include <iostream>
 #include "./CipherTable/CipherTable.h"
-
+#include "./Key/Key.h"
+#include <memory>
 int main() {
-    CipherTable table;
-    std::cout << table.encrypt_letter_by_key("d", "f") << std::endl;
-    table.to_string();
+    auto vigenere_table = std::make_unique<CipherTable>();
+    Key key("lemon");
+    std::cout << key.fill_text_by_key("hello world");
     return 0;
 }
