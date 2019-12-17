@@ -15,7 +15,7 @@ public:
     CipherTable();
     ~CipherTable();
     static std::array<std::string, ALPHABET_SIZE> alphabet;
-    std::string encrypt_letter_by_key(std::string letter, std::string key) override ;
+    std::string find_encrypted_letter_by_key(std::string letter, std::string key) override ;
     void to_string() override ;
 private:
     void init() override ;

@@ -49,7 +49,7 @@ int get_index(const array<string, ALPHABET_SIZE> &list, string element)
     return -1;
 }
 
-std::string CipherTable::encrypt_letter_by_key(std::string letter, std::string key) {
+std::string CipherTable::find_encrypted_letter_by_key(std::string letter, std::string key) {
     int letter_index = get_index(alphabet, letter);
     int key_index = get_index(alphabet, key);
     if (letter_index == -1 || key_index == -1) return NULL;
