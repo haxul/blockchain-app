@@ -5,19 +5,22 @@
 #include <string>
 #include <iostream>
 #include "CipherAble.h"
+#include <array>
+#include <vector>
+
 #define ALPHABET_SIZE 26
 
 class CipherTable : public CipherAble {
 public:
     CipherTable();
     ~CipherTable();
-    static std::string alphabet[ALPHABET_SIZE];
-    std::string encrypt_letter_by_key(std::string letter, std::string key);
-    void to_string();
+    static std::array<std::string, ALPHABET_SIZE> alphabet;
+    std::string encrypt_letter_by_key(std::string letter, std::string key) override ;
+    void to_string() override ;
 private:
-    void init();
+    void init() override ;
     int** matrix = new int*[ALPHABET_SIZE] {0};
-    int** create_rows();
+    void create_rows();
  };
 
 
