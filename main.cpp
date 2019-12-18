@@ -5,6 +5,6 @@
 int main() {
     auto vigenere_table = std::make_unique<CipherTable>();
     Key key("lemon");
-    std::cout << key.fill_text_by_key(6);
+    std::cout << key.fill_text_by_key(0);
     return 0;
 }
