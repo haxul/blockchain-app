@@ -11,8 +11,10 @@ Key::~Key() {
     delete value;
 }
 
-string Key::fill_text_by_key(const string &text) {
+string Key::fill_text_by_key(int size) {
     string result = "";
-    //TODO function to fill text reuesable key
-    return "test";
+    for (int i = 0; i < size ; ++i) {
+
+    }
+    return reinterpret_cast<basic_string<char, char_traits<char>, allocator<char>> &&>((*value)[0]);
 }

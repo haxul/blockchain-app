@@ -8,7 +8,7 @@ class Key {
 public:
     Key(std::string key_value) ;
     ~Key();
-    std::string fill_text_by_key(const std::string &text);
+    std::string fill_text_by_key(int size);
 
 private:
     std::string* value;
