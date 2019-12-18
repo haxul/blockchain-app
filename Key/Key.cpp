@@ -22,3 +22,7 @@ string Key::fill_text_by_key(unsigned int size) {
         key_letter_index++;
     }
 }
+
+string Key::get_key() {
+    return *key_value;
+}
