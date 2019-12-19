@@ -26,7 +26,7 @@ string TextEncrypter::encrypt() {
     string encrypted_text = "";
     int text_length = init_text->size();
     string filled_key =  key->fill_text_by_key(text_length);
-    for (int i = 0; i < init_text->size(); ++i) {
+    for (int i = 0; i < text_length; ++i) {
         string character = string(1,init_text->at(i));
         bool isLetter = regex_match(character, regex("[a-zA-Z]"));
         if (isLetter) {
