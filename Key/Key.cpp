@@ -17,8 +17,8 @@ string Key::fill_text_by_key(unsigned int size) {
     int key_letter_index = 0;
     for (int i = 0; ; ++i) {
         if (result.size() >= size) return result;
-        if (key_letter_index >= (*key_value).size()) key_letter_index = 0;
-        result += (*key_value).at(key_letter_index);
+        if (key_letter_index >= key_value->size()) key_letter_index = 0;
+        result += key_value->at(key_letter_index);
         key_letter_index++;
     }
 }

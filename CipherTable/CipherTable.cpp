@@ -1,8 +1,8 @@
 
 #include <ostream>
 #include "CipherTable.h"
-
 #define ALPHABET_SIZE 26
+#define NOT_FOUND -1
 using namespace std;
 std::array<string, ALPHABET_SIZE> CipherTable::alphabet = {
         "a", "b", "c", "d", "e", "f", "g",
@@ -46,13 +46,13 @@ int get_index(const array<string, ALPHABET_SIZE> &list, string element)
     for (int i = 0; i < list.size(); ++i) {
         if (element == list.at(i)) return i;
     }
-    return -1;
+    return NOT_FOUND;
 }
 
 std::string CipherTable::find_encrypted_letter_by_key(std::string letter, std::string key) {
     int letter_index = get_index(alphabet, letter);
     int key_index = get_index(alphabet, key);
-    if (letter_index == -1 || key_index == -1) return "";
+    if (letter_index == NOT_FOUND || key_index == NOT_FOUND) return "";
     int found_letter_index  = this->matrix[letter_index][key_index];
     return alphabet[found_letter_index];
 }

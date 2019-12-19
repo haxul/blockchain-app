@@ -20,22 +20,25 @@ void TextEncrypter::remove_init_text_spaces() {
     *init_text = regex_replace(*init_text, reg_exp, "");
 }
 
+string create_string_by_char(char letter) {
+    const int amount_char_to_convert = 1;
+    return  string(amount_char_to_convert, letter);
+}
+
 string TextEncrypter::encrypt() {
     remove_init_text_spaces();
     auto vigenere_table = make_unique<CipherTable>();
-    string encrypted_text = "";
     int text_length = init_text->size();
-    string filled_key =  key->fill_text_by_key(text_length);
+    string filled_key = key->fill_text_by_key(text_length);
+    string final_encrypted_text = "";
     for (int i = 0; i < text_length; ++i) {
-        string character = string(1,init_text->at(i));
+        string character = create_string_by_char(init_text->at(i));
         bool isLetter = regex_match(character, regex("[a-zA-Z]"));
         if (isLetter) {
-            string cur_key_letter = string(1, tolower(filled_key.at(i)));
+            string cur_key_letter = create_string_by_char(tolower(filled_key.at(i)));
             string value = vigenere_table->find_encrypted_letter_by_key(character, cur_key_letter);
-            encrypted_text += value.empty() ? cur_key_letter : value;
-            continue;
-        }
-        encrypted_text += character;
+            final_encrypted_text += value.empty() ? cur_key_letter : value;
+        } else final_encrypted_text += character;
     }
-    return encrypted_text;
+    return final_encrypted_text;
 }
