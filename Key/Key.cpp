@@ -12,11 +12,11 @@ Key::~Key() {
     delete key_value;
 }
 
-string Key::fill_text_by_key(unsigned int size) {
+string Key::fill_text_by_key(unsigned int text_length) {
     string result = "";
     int key_letter_index = 0;
     for (int i = 0; ; ++i) {
-        if (result.size() >= size) return result;
+        if (result.size() >= text_length) return result;
         if (key_letter_index >= key_value->size()) key_letter_index = 0;
         result += key_value->at(key_letter_index);
         key_letter_index++;
