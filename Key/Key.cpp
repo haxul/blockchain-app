@@ -11,7 +11,13 @@ Key::Key(string key_value) {
 Key::~Key() {
     delete key_value;
 }
-
+/*
+ * method to create string of repeated key
+ * for example:
+ *  text_length == 9
+ *  key_value = lemon
+ *  method return string `lemonlemo` (9 letters)
+ * */
 string Key::fill_text_by_key(unsigned int text_length) {
     string result = "";
     int key_letter_index = 0;
