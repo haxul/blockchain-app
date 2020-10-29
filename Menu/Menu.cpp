@@ -67,7 +67,7 @@ string Menu::get_text() {
     unsigned int choosed_option = choose_option_to_input_text();
     if (choosed_option == EXIT) {
         cout << "bay :)" << endl;
-        exit(1);
+        exit(0);
     }
     return choosed_option == ENTER_TEXT_MANUALLY ? enter_text("enter text to be encrypted: ") : read_file();
 }
